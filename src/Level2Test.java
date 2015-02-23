@@ -119,6 +119,11 @@ public class Level2Test {
 		frame.getContentPane().add(resetButton);
 		
 		JButton mapButton = new JButton("Back to map");
+		mapButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+		});
 		mapButton.setBounds(523, 432, 117, 29);
 		frame.getContentPane().add(mapButton);
 		
