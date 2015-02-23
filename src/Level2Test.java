@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.awt.Font;
 
 
 public class Level2Test {
@@ -63,6 +64,8 @@ public class Level2Test {
 	
 	private JLabel totalLabel = new JLabel("");
 	JTextArea gatkeeperTextfield = new JTextArea();
+	JPanel levelComBorder = new JPanel();
+	JPanel levelComPanel = new JPanel();
 
 	/**
 	 * Launch the application.
@@ -89,6 +92,39 @@ public class Level2Test {
 		frame.setBounds(100, 100, 640, 499);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		levelComBorder.setVisible(false);
+		levelComPanel.setVisible(false);
+		
+		levelComBorder.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Nice Job!", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		levelComBorder.setBounds(133, 68, 301, 304);
+		frame.getContentPane().add(levelComBorder);
+		levelComBorder.setLayout(null);
+		
+		
+		levelComPanel.setBounds(6, 18, 147, 280);
+		levelComBorder.add(levelComPanel);
+		
+		JTextArea txtrWellDoneYou = new JTextArea();
+		txtrWellDoneYou.setFont(new Font("Lucida Grande", Font.PLAIN, 23));
+		txtrWellDoneYou.setWrapStyleWord(true);
+		txtrWellDoneYou.setLineWrap(true);
+		txtrWellDoneYou.setText("Well done! you finished level 2, click continue to keep going!");
+		levelComPanel.add(txtrWellDoneYou);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("/Users/jhallen/MathGame/images/star-icon.png"));
+		label.setBounds(161, 20, 134, 233);
+		levelComBorder.add(label);
+		
+		JButton btnContinue = new JButton("continue");
+		btnContinue.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+		});
+		btnContinue.setBounds(171, 269, 117, 29);
+		levelComBorder.add(btnContinue);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.LIGHT_GRAY);
@@ -119,6 +155,11 @@ public class Level2Test {
 		frame.getContentPane().add(resetButton);
 		
 		JButton mapButton = new JButton("Back to map");
+		mapButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+		});
 		mapButton.setBounds(523, 432, 117, 29);
 		frame.getContentPane().add(mapButton);
 		
@@ -137,6 +178,9 @@ public class Level2Test {
 					System.out.println("level complete: number of fails- " + fails);
 					gatkeeperTextfield.setText("That is the perfect amount of bells!");
 					equation = "0";
+					
+					levelComBorder.setVisible(true);
+					levelComPanel.setVisible(true);
 					
 				}
 				else{

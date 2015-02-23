@@ -21,10 +21,15 @@ import java.awt.event.ActionEvent;
 import java.sql.*;
 
 import javax.swing.*;
+import java.awt.Font;
 
 public class Level1Test{
 	private int total = 0;
 	private int fails = 0;
+	
+	JPanel levelComBorder = new JPanel();
+	JPanel levelComPanel = new JPanel();
+	
 	public int lid,npc1, npc2, npc3, npc4;
 	Connection connection=sqliteConnection.dbConnector();
 	{
@@ -94,6 +99,40 @@ public class Level1Test{
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		levelComBorder.setVisible(false);
+		levelComPanel.setVisible(false);
+		
+		
+		levelComBorder.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Nice Job!", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		levelComBorder.setBounds(104, 49, 292, 261);
+		frame.getContentPane().add(levelComBorder);
+		levelComBorder.setLayout(null);
+		
+		
+		levelComPanel.setBounds(6, 18, 137, 237);
+		levelComBorder.add(levelComPanel);
+		
+		JTextArea txtrWellDoneClick = new JTextArea();
+		txtrWellDoneClick.setFont(new Font("Lucida Grande", Font.PLAIN, 23));
+		txtrWellDoneClick.setWrapStyleWord(true);
+		txtrWellDoneClick.setLineWrap(true);
+		txtrWellDoneClick.setText("Well done!, click continue to get back to the map.");
+		levelComPanel.add(txtrWellDoneClick);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("/Users/jhallen/MathGame/images/star-icon.png"));
+		label.setBounds(155, 18, 131, 180);
+		levelComBorder.add(label);
+		
+		JButton btnContinue = new JButton("continue");
+		btnContinue.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+		});
+		btnContinue.setBounds(169, 226, 117, 29);
+		levelComBorder.add(btnContinue);
+		
 		txtpnGiveMe.setEditable(false);
 		txtpnGiveMe.setText("Give me " + npc4 + " coins to pass through to the mountains");
 		txtpnGiveMe.setBounds(532, 234, 101, 70);
@@ -117,6 +156,11 @@ public class Level1Test{
 		frame.getContentPane().add(resetButton);
 		
 		JButton mapButton = new JButton("back to map");
+		mapButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+			}
+		});
 		mapButton.setBounds(532, 431, 109, 37);
 		frame.getContentPane().add(mapButton);
 		
@@ -142,6 +186,9 @@ public class Level1Test{
 					txtpnGiveMe.setText("good job! now you can pass through to the mountains");
 					equation = "0";
 					total = 0;
+					
+					levelComBorder.setVisible(true);
+					levelComPanel.setVisible(true);
 				}
 				else{
 					System.out.println("wrong answer, try again");
