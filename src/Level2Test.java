@@ -126,6 +126,11 @@ public class Level2Test {
 		});
 		mapButton.setBounds(523, 432, 117, 29);
 		frame.getContentPane().add(mapButton);
+		mapButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();//in future add some actions to feed the database and reinitialize main map.
+			}
+		});
 		
 		JLabel gateKeeperLabel = new JLabel("");
 		gateKeeperLabel.setIcon(new ImageIcon("images/Santa-icon.png"));
@@ -167,6 +172,8 @@ public class Level2Test {
 		frame.getContentPane().add(npc1);
 		
 		JButton npc1Button = new JButton("Take");
+		npc1Button.setBounds(532, 374, 70, 29);
+		frame.getContentPane().add(npc1Button);
 		npc1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int bellVal = npC1;
@@ -180,8 +187,7 @@ public class Level2Test {
 				}
 			}
 		});
-		npc1Button.setBounds(532, 374, 57, 29);
-		frame.getContentPane().add(npc1Button);
+		
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBounds(473, 297, 161, 16);
@@ -199,6 +205,8 @@ public class Level2Test {
 		frame.getContentPane().add(npc2);
 		
 		JButton noc2Button = new JButton("Take");
+		noc2Button.setBounds(273, 374, 70, 29);
+		frame.getContentPane().add(noc2Button);
 		noc2Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int bellVal = npC2;
@@ -212,8 +220,7 @@ public class Level2Test {
 				}
 			}
 		});
-		noc2Button.setBounds(273, 374, 57, 29);
-		frame.getContentPane().add(noc2Button);
+		
 		
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(218, 311, 161, 16);
@@ -231,6 +238,8 @@ public class Level2Test {
 		frame.getContentPane().add(npc3);
 		
 		JButton npc3Button = new JButton("Take");
+		npc3Button.setBounds(391, 337, 70, 29);
+		frame.getContentPane().add(npc3Button);
 		npc3Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int bellVal = npC3;
@@ -244,8 +253,7 @@ public class Level2Test {
 				}
 			}
 		});
-		npc3Button.setBounds(391, 337, 57, 29);
-		frame.getContentPane().add(npc3Button);
+		
 		
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(317, 269, 212, 16);
@@ -263,6 +271,8 @@ public class Level2Test {
 		frame.getContentPane().add(npc4);
 		
 		JButton npc4Button = new JButton("Take");
+		npc4Button.setBounds(146, 160, 70, 29);
+		frame.getContentPane().add(npc4Button);
 		npc4Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int bellVal = npC4;
@@ -276,8 +286,7 @@ public class Level2Test {
 				}
 			}
 		});
-		npc4Button.setBounds(146, 160, 57, 29);
-		frame.getContentPane().add(npc4Button);
+		
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(88, 98, 181, 16);
@@ -295,6 +304,8 @@ public class Level2Test {
 		frame.getContentPane().add(npc5);
 		
 		JButton npc5Button = new JButton("Take");
+		npc5Button.setBounds(273, 212, 70, 29);
+		frame.getContentPane().add(npc5Button);
 		npc5Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int bellVal = npC5;
@@ -308,8 +319,7 @@ public class Level2Test {
 				}
 			}
 		});
-		npc5Button.setBounds(273, 212, 57, 29);
-		frame.getContentPane().add(npc5Button);
+		
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(226, 151, 145, 16);
