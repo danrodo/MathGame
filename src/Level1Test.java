@@ -163,6 +163,12 @@ public class Level1Test{
 		});
 		mapButton.setBounds(532, 431, 109, 37);
 		frame.getContentPane().add(mapButton);
+		mapButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();//in future add some actions to feed the database and reinitialize main map.
+			}
+		});
+		
 		
 		JPanel totalBorder = new JPanel();
 		totalBorder.setBackground(Color.LIGHT_GRAY);
@@ -217,6 +223,8 @@ public class Level1Test{
 		frame.getContentPane().add(takeLabel1);
 		
 		JButton takeButton1 = new JButton("take");
+		takeButton1.setBounds(110, 326, 70, 29);
+		frame.getContentPane().add(takeButton1);
 		takeButton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int coinVal6 = npc1;
@@ -230,12 +238,11 @@ public class Level1Test{
 				
 			}
 		});
-		takeButton1.setBounds(110, 326, 64, 29);
-		frame.getContentPane().add(takeButton1);
+		
 		
 		JLabel takeButton2 = new JLabel("");
 		takeButton2.setIcon(new ImageIcon("images/Man-icon.png"));
-		takeButton2.setBounds(286, 260, 48, 70);
+		takeButton2.setBounds(286, 260, 70, 70);
 		frame.getContentPane().add(takeButton2);
 		
 		JButton btnNewButton_1 = new JButton("take");
@@ -252,7 +259,7 @@ public class Level1Test{
 				}
 			}
 		});
-		btnNewButton_1.setBounds(286, 315, 58, 29);
+		btnNewButton_1.setBounds(286, 315, 70, 29);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JLabel takeLabel3 = new JLabel("");
@@ -261,6 +268,8 @@ public class Level1Test{
 		frame.getContentPane().add(takeLabel3);
 		
 		JButton takeButton3 = new JButton("take");
+		takeButton3.setBounds(348, 226, 70, 29);
+		frame.getContentPane().add(takeButton3);
 		takeButton3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int coinVal = npc3;
@@ -274,8 +283,7 @@ public class Level1Test{
 				}
 			}
 		});
-		takeButton3.setBounds(348, 226, 58, 29);
-		frame.getContentPane().add(takeButton3);
+		
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(310, 164, 129, 16);
@@ -284,7 +292,7 @@ public class Level1Test{
 		
 		JLabel coinsLabel4 = new JLabel("I'll give you " + npc3 + " coins");
 		coinsLabel4.setHorizontalAlignment(SwingConstants.CENTER);
-		coinsLabel4.setBounds(0, 0, 129, 16);
+		coinsLabel4.setBounds(0, 0, 140, 16);
 		panel.add(coinsLabel4);
 		coinsLabel4.setBackground(Color.WHITE);
 		
@@ -294,7 +302,7 @@ public class Level1Test{
 		panel_1.setLayout(null);
 		
 		JLabel coinsLabel5 = new JLabel("Take these " + npc2 + " coins");
-		coinsLabel5.setBounds(0, 0, 129, 16);
+		coinsLabel5.setBounds(0, 0, 140, 19);
 		panel_1.add(coinsLabel5);
 		coinsLabel5.setHorizontalAlignment(SwingConstants.CENTER);
 		
